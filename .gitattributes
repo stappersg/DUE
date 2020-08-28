@@ -1,6 +1,10 @@
 # If building with quilt, don't need
 .gitignore export-ignore
 
-# debian/rules replaces makefile, so skip it
-# when generating the tarball.
-Makefile export-ignore
+# These files should have been filtered out by debian/master
+# As merge is master -> debian/master -> here
+Makefile merge=ours
+ChangeLog merge=ours
+
+# This branch is used for release. Do not change format.
+debian/source/format merge=ours
